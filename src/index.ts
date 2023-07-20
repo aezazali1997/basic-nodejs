@@ -1,9 +1,9 @@
-const express = require('express');
+import express, { Application, Request, Response } from 'express'
 const dotenv = require('dotenv');
 dotenv.config();
 const PORT = process.env.PORT || 8001;
 const app = express();
-app.use('/user', (req, res) => {
+app.use('/user', (req: Request, res: Response) => {
     res.status(200).send('just testing if this routes is working or not')
 })
 app.use('/', (req, res) => {
